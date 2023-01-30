@@ -1,3 +1,7 @@
+# Copyright (c) 2023 Sony Group Corporation and Hanjuku-kaso Co., Ltd. All Rights Reserved.
+#
+# This software is released under the MIT License.
+
 import copy
 
 def get_counterfactual_action_distribution(dataset, cf_beta, n_rounds):

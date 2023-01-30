@@ -1,3 +1,7 @@
+# Copyright (c) 2023 Sony Group Corporation and Hanjuku-kaso Co., Ltd. All Rights Reserved.
+#
+# This software is released under the MIT License.
+
 import imp
 from posixpath import split
 import numpy as np

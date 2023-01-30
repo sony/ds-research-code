@@ -58,7 +58,7 @@ python evaluation_with_synthetic_data.py \
   --gt_n_sampling 100
 ```
 
-This will run synthetic experiments with $(\beta_{1}, \beta_{2})=(-2,2)$ and $\beta_{e} \in \{-10, -5, 0, 5, 10\}$. If you want to know the detailed meaning of the command, please read the explanation of argument in source code. If you refer to the paper and change the value of the argument, you can perform the same experiment as the paper.
+This will run synthetic experiments with $(\beta_{1}, \beta_{2})=(-2,2)$ and $\beta_{e} \in \lbrace -10, -5, 0, 5, 10 \rbrace$. If you want to know the detailed meaning of the command, please read the explanation of argument in source code. If you refer to the paper and change the value of the argument, you can perform the same experiment as the paper.
 
 
 ## Authors of the paper

@@ -1,0 +1,61 @@
+# lightening parameters
+accelerator: gpu
+precision: bf16
+devices: 1      # int or list of int
+num_sanity_val_steps: 0
+
+# system parameters
+mode: test         # train or test
+model_name: IntervalLLM-Video_Games-test
+dataset: data
+data_dir: "./data/games"
+prompt_path: "./prompt/Game.txt"
+input_prompt: item_interval             # choices=['item_only', 'item_ts', 'item_interval']
+llm_path: "./llama/llama2-7b"
+output_dir: "./output/games/"
+ckpt_dir: "./models"
+save: all           # part or all
+log_every_n_steps: 5
+cans_num: 20
+seed: 2025
+resume_from_checkpoint: "./IntervalLLM/outputs/IntervalLLM-Video_Games/model_checkpoints_IntervalLLM-Video_Games/last.ckpt"
+
+# training parameters
+batch_size: 8
+lr: 1e-5
+accumulate_grad_batches: 1
+lr_warmup_start_lr: 1e-6
+lr_decay_min_lr: 1e-6
+max_epochs: 3
+num_workers: 8
+check_val_every_n_epoch: 1
+lr_scheduler: cosine
+weight_decay: 1e-2
+gradient_clip_val: 1.0
+
+pretrained_item_config:
+  device: cuda
+  pretrained_rec_used: 0
+  rec_path: ""
+  maxlen: 128
+  hidden_units: 64
+  num_blocks: 2
+  num_heads: 1
+  dropout_rate: 0.1
+  nn_parameter: false
+
+temporal_projector_config: 1
+
+interval_infused_attention_config:
+  interval_infused_attention: 1
+  n_head: 2
+  d_model: 4096
+  d_k: 256
+  d_v: 256
+  dropout: 0.1
+
+# LoRA parameters
+llm_tuning: lora
+lora_r: 64
+lora_alpha: 128
+lora_dropout: 0.05

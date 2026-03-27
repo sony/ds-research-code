@@ -1,0 +1,69 @@
+run_file: "main_num_data"
+
+num_runs: 100
+n_unique_action: 6
+len_list: 6
+dim_context: 10
+reward_type: "binary"
+reward_structure: "standard_additive"
+decay_function: "exponential"
+is_factorizable: False
+random_state: 12345
+n_test: 20000
+eps: 0.3
+reward_type_conversion: "continuous"
+reward_structure_conversion: "standard_additive" #'cascade_additive', 'cascade_decay', 'independent', 'standard_additive', 'standard_decay'
+deterministic_user_threshold: "inf"
+effect_from_ranking: 0.5
+evaluation_policy_logit: linear_behavior_policy_logit #"linear_reward_function"
+tau_pi_e: 1.0
+
+#num_data
+num_data_list: [500, 1000, 2000, 4000]
+
+#deterministic_ratio
+deterministic_user_threshold_list: [-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5] #[-1.2, -0.8, -0.4, 0.0, 0.4, 0.8, 1.2]
+num_data: 1000
+
+#effect_conversion
+effect_from_ranking_list: [0.0, 0.25, 0.5, 0.75, 1.0]
+
+#len_list
+len_list_list: [2,3,4,5,6]
+
+#estimation_noise
+estimation_noise_list: [0.0, 2.0, 4.0, 6.0, 8.0]
+
+#epsilon
+epsilon_list: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+
+
+#kuairec
+real:
+  num_runs: 50
+  n_unique_action: 10
+  len_list: 6
+  dim_context: 10
+  reward_type: "binary"
+  reward_structure: "standard_additive"
+  decay_function: "exponential"
+  is_factorizable: False
+  random_state: 12345
+  n_test: 20000
+  eps: 0.0
+  reward_type_conversion: "continuous"
+  reward_structure_conversion: "standard_additive" #'cascade_additive', 'cascade_decay', 'independent', 'standard_additive', 'standard_decay'
+  deterministic_user_threshold: "inf"
+  effect_from_ranking: 0.0
+  evaluation_policy_logit: linear_behavior_policy_logit #"linear_reward_function"
+  num_data_list: [500, 1000, 2000, 4000]
+  tau_pi_e: -1.0
+
+  deterministic_user_threshold_list:  [-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5]
+  num_data: 1000
+
+  #len_list
+  len_list_list: [2,3,4,5]
+
+  #estimation_noise
+  estimation_noise_list: [0.0, 2.0, 4.0, 6.0, 8.0]

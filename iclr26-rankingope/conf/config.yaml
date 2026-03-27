@@ -1,0 +1,9 @@
+defaults:
+  - _self_
+  - setting: default
+hydra:
+  run:
+    dir: ./result/${setting.run_file}/deterministic_user_threshold=${setting.deterministic_user_threshold}/conversin=${setting.reward_type_conversion}/reward_structure=${setting.reward_structure}/reward_structure_conversion=${setting.reward_structure_conversion}/evaluation_policy_logit=${setting.evaluation_policy_logit}/effect_from_ranking=${setting.effect_from_ranking}/len_list=${setting.len_list},n_unique_action=${setting.n_unique_action}
+  sweep:
+    dir: ./result/${setting.run_file}/deterministic_user_threshold=${setting.deterministic_user_threshold}/conversin=${setting.reward_type_conversion}/reward_structure=${setting.reward_structure}/reward_structure_conversion=${setting.reward_structure_conversion}/evaluation_policy_logit=${setting.evaluation_policy_logit}/effect_from_ranking=${setting.effect_from_ranking}/len_list=${setting.len_list},n_unique_action=${setting.n_unique_action}
+    subdir: ./
